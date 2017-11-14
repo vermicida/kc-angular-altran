@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
+import { ContactosService } from './contactos.service';
 
 @NgModule({
   // En el metadato 'declarations' indicamos todos los componentes, directivas y
@@ -20,11 +21,13 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
     BrowserModule,
     AppRoutingModule
   ],
-  // En el metadato 'providers' añadimos los proveedores de aquellas servicios, clases
+  // En el metadato 'providers' añadimos los proveedores de aquellos servicios, clases
   // y valores que quieran inyectarse como dependencias en alguna pieza de nuestra app.
   // De no hacerlo, Angular no sabrá cómo instanciar aquella dependencia que le estamos
   // pidiendo.
-  providers: [],
+  providers: [
+    ContactosService
+  ],
   // En el metadato 'bootstrap' establecemos el componente raíz de nuestra app.
   bootstrap: [
     AppComponent
