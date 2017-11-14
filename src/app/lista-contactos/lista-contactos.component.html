@@ -1,0 +1,11 @@
+<ul>
+  <!--
+    La directiva 'NgFor' replica una estructura HTML tantas veces como
+    elementos haya en una colección dada. Además, en cada iteración tenemos
+    acceso al elemento que corresponda.
+  -->
+  <li *ngFor="let contacto of contactos">
+    {{ contacto }}
+    <button (click)="notificarContactoEliminar(contacto)">Eliminar</button>
+  </li>
+</ul>

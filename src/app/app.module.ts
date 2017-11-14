@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
 @NgModule({
   // En el metadato 'declarations' indicamos todos los componentes, directivas y
   // pipes de nuestra app. Si no los añadimos, nuestra app (módulo) no sabrá
   // cómo pintarlos en pantalla o cómo utilizarlos.
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaContactosComponent
   ],
   // En el metadato 'imports' indicamos todos aquellos módulos de los cuáles depende
   // nuestra app para funcionar.

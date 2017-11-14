@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  ngOnInit() {
+  listaContactos: string[] = [
+    'Bill Gates',
+    'Tim Cook',
+    'Elon Musk',
+    'Steve Wozniak',
+    'Sundar Pichai'
+  ];
+
+  ngOnInit(): void {
     console.log('Soy AppComponent y acabo de despertarme');
+  }
+
+  eliminarContacto(contacto: string): void {
+    this.listaContactos = this.listaContactos.filter(c => c !== contacto);
   }
 }

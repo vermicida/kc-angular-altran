@@ -1,3 +1,17 @@
 <div>
   <h1>Super Agenda</h1>
 </div>
+<div>
+  <!--
+    Para instanciar un componente usamos su 'selector' como
+    etiqueta HTML. Para enlazar datos al componente hijo, usamos
+    como atributos aquellos que estén decorados con '@Input' en él.
+    Por otro lado, para suscribirnos a sus eventos, lo haremos
+    indicando entre paréntesis el nombre del mismo, que está decorado
+    en el hijo con '@Output'. Para recoger los datos del evento, sean
+    del tipo del sean, utilizamos la palabra reservada '$event'.
+  -->
+  <app-lista-contactos
+    [contactos]="listaContactos"
+    (botonEliminarPulsado)="eliminarContacto($event)"></app-lista-contactos>
+</div>
