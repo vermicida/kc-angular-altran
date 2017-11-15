@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { Contacto } from '../contacto';
+
 @Component({
   selector: 'app-formulario-contacto',
   templateUrl: './formulario-contacto.component.html',
@@ -11,7 +13,7 @@ export class FormularioContactoComponent {
 
   formularioContacto: FormGroup;
 
-  @Output() botonGuardarPulsado = new EventEmitter<any>();
+  @Output() botonGuardarPulsado = new EventEmitter<Contacto>();
 
   // Para crear formularios reactivos nos podemos apoyar en
   // la clase 'FormBuilder' que debemos solicitar a Angular
@@ -33,12 +35,18 @@ export class FormularioContactoComponent {
           Validators.required,
           Validators.minLength(3)
         ]
-      }]
+      }],
+      apellidos: '',
+      telefono: '',
+      email: '',
+      facebook: '',
+      twitter: ''
     });
   }
 
   notificarCreacionContacto(): void {
-    this.botonGuardarPulsado.emit(this.formularioContacto.value);
+    let contacto = this.formularioContacto.value as Contacto;
+    this.botonGuardarPulsado.emit(contacto);
   }
 
 }

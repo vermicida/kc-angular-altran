@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ContactosService } from './contactos.service';
+import { Contacto } from './contacto';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
-  guardarContacto(contacto: any): void {
+  guardarContacto(contacto: Contacto): void {
     this._contactosService.crearContacto(contacto.nombre);
     this.listaContactos = this._contactosService.obtenerContactos();
   }

@@ -7,26 +7,106 @@
 <form
   [formGroup]="formularioContacto"
   (ngSubmit)="notificarCreacionContacto()">
-  <div>
-    <!--
-      Para decirle a Angular qué instancia de 'FormControl'
-      se va a encargar de gestionar un control, usamos la
-      directiva 'FormControlName'.
-    -->
-    <input
-      type="text"
-      placeholder="Ej. Joselito"
-      formControlName="nombre">
+
+  <!-- Nombre del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="nombre-contacto">Nombre</label>
+      <!--
+        Para decirle a Angular qué instancia de 'FormControl'
+        se va a encargar de gestionar un control, usamos la
+        directiva 'FormControlName'.
+      -->
+      <input
+        id="nombre-contacto"
+        type="text"
+        placeholder="Ej. Bob"
+        formControlName="nombre"
+        class="u-full-width">
+      <!--
+        Podemos acceder a las instancias 'FormControl' de un
+        formulario indicando su nombre en la función 'get()' del
+        mismo.
+      -->
+      <div *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">
+        El campo nombre es obligatorio y debe tener al menos 3 caracteres.
+      </div>
+    </div>
   </div>
-  <!--
-    Podemos acceder a las instancias 'FormControl' de un
-    formulario indicando su nombre en la función 'get()' del
-    mismo.
-  -->
-  <div *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">
-    El campo nombre es obligatorio y debe tener al menos 3 caracteres.
+
+  <!-- Apellidos del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="apellidos-contacto">Apellidos</label>
+      <input
+        id="apellidos-contacto"
+        type="text"
+        placeholder="Ej. Esponja"
+        formControlName="apellidos"
+        class="u-full-width">
+    </div>
   </div>
-  <button
-    type="submit"
-    [disabled]="formularioContacto.invalid">Guardar</button>
+
+  <!-- Teléfono del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="telefono-contacto">Teléfono</label>
+      <input
+        id="telefono-contacto"
+        type="text"
+        placeholder="Ej. 555 666 777"
+        formControlName="telefono"
+        class="u-full-width">
+    </div>
+  </div>
+
+  <!-- Correo electrónico del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="email-contacto">Correo electrónico</label>
+      <input
+        id="email-contacto"
+        type="text"
+        placeholder="Ej. bob.esponja@example.com"
+        formControlName="email"
+        class="u-full-width">
+    </div>
+  </div>
+
+  <!-- Cuenta de Facebook del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="facebook-contacto">Facebook</label>
+      <input
+        id="facebook-contacto"
+        type="text"
+        placeholder="Ej. bob.esponja"
+        formControlName="facebook"
+        class="u-full-width">
+    </div>
+  </div>
+
+  <!-- Cuenta de Twitter del contacto -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="twitter-contacto">Twitter</label>
+      <input
+        id="twitter-contacto"
+        type="text"
+        placeholder="Ej. @bobesponja"
+        formControlName="twitter"
+        class="u-full-width">
+    </div>
+  </div>
+
+  <!-- Botón guardar -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <button
+        type="submit"
+        [disabled]="formularioContacto.invalid"
+        class="button-primary u-full-width">Guardar</button>
+    </div>
+  </div>
+
 </form>
