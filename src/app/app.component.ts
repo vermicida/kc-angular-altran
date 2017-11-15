@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
+  guardarContacto(contacto: any): void {
+    this._contactosService.crearContacto(contacto.nombre);
+    this.listaContactos = this._contactosService.obtenerContactos();
+  }
+
   borrarContacto(contacto: string): void {
     this._contactosService.eliminarContacto(contacto);
     this.listaContactos = this._contactosService.obtenerContactos();

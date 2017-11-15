@@ -1,0 +1,32 @@
+<!--
+  Para indicar a Angular qué instancia de 'FormGroup' se va
+  a encargar de gestionar un formulario, usamos la directiva
+  'FormGroup'. Podemos suscribirnos al evento 'ngSubmit' para
+  atender el envío del formulario.
+-->
+<form
+  [formGroup]="formularioContacto"
+  (ngSubmit)="notificarCreacionContacto()">
+  <div>
+    <!--
+      Para decirle a Angular qué instancia de 'FormControl'
+      se va a encargar de gestionar un control, usamos la
+      directiva 'FormControlName'.
+    -->
+    <input
+      type="text"
+      placeholder="Ej. Joselito"
+      formControlName="nombre">
+  </div>
+  <!--
+    Podemos acceder a las instancias 'FormControl' de un
+    formulario indicando su nombre en la función 'get()' del
+    mismo.
+  -->
+  <div *ngIf="formularioContacto.get('nombre').touched && formularioContacto.get('nombre').invalid">
+    El campo nombre es obligatorio y debe tener al menos 3 caracteres.
+  </div>
+  <button
+    type="submit"
+    [disabled]="formularioContacto.invalid">Guardar</button>
+</form>

@@ -2,6 +2,9 @@
   <h1>Super Agenda</h1>
 </div>
 <div>
+  <app-formulario-contacto
+    (botonGuardarPulsado)="guardarContacto($event)">
+  </app-formulario-contacto>
   <!--
     Para instanciar un componente usamos su 'selector' como
     etiqueta HTML. Para enlazar datos al componente hijo, usamos
@@ -13,5 +16,6 @@
   -->
   <app-lista-contactos
     [contactos]="listaContactos"
-    (botonEliminarPulsado)="borrarContacto($event)"></app-lista-contactos>
+    (botonEliminarPulsado)="borrarContacto($event)">
+  </app-lista-contactos>
 </div>

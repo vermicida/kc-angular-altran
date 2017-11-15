@@ -20,6 +20,10 @@ export class ContactosService {
     return this._listaContactos;
   }
 
+  crearContacto(contacto: string): void {
+    this._listaContactos.push(contacto);
+  }
+
   eliminarContacto(contacto: string): void {
     this._listaContactos = this._listaContactos.filter(c => c !== contacto);
   }
