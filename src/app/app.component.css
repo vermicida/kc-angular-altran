@@ -1,0 +1,23 @@
+h1 {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+ul {
+  list-style: none;
+  border-bottom: 1px solid #1EAEDB;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+a.seleccionada {
+  border: 1px solid #1EAEDB;
+  border-bottom: 1px solid #ffffff;
+}
