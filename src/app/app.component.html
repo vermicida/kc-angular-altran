@@ -1,25 +1,29 @@
 <div class="container">
-  <div>
-    <header>
-      <h1>Super Agenda</h1>
-    </header>
-  </div>
-  <div>
-    <app-formulario-contacto
-      (botonGuardarPulsado)="guardarContacto($event)">
-    </app-formulario-contacto>
-    <!--
-      Para instanciar un componente usamos su 'selector' como
-      etiqueta HTML. Para enlazar datos al componente hijo, usamos
-      como atributos aquellos que estén decorados con '@Input' en él.
-      Por otro lado, para suscribirnos a sus eventos, lo haremos
-      indicando entre paréntesis el nombre del mismo, que está decorado
-      en el hijo con '@Output'. Para recoger los datos del evento, sean
-      del tipo del sean, utilizamos la palabra reservada '$event'.
-    -->
-    <app-lista-contactos
-      [contactos]="listaContactos"
-      (botonEliminarPulsado)="borrarContacto($event)">
-    </app-lista-contactos>
-  </div>
+  <header>
+    <h1>Super Agenda</h1>
+  </header>
+  <!-- Barra de navegación -->
+  <nav>
+    <ul>
+      <li>
+        <!--
+          Para navegar entre las rutas definidas en el módulo 'AppRoutingModule' debemos
+          hacer uso de la directiva 'RouterLink'. Si usamos el atributo estándar 'href'
+          la navegación la hace el navegador y no la app Angular, por lo que perdemos todas
+          las ventajas del Single Page Application.
+        -->
+        <a routerLink="/nuevo">Nuevo contacto</a>
+      </li>
+      <li>
+        <a routerLink="/todos">Mis contactos</a>
+      </li>
+    </ul>
+  </nav>
+  <!--
+    Para que el 'Router' de Angular sepa dónde trabajar el routing de la
+    app, es necesario establecer una zona dinámica. Esto lo hacemos con la
+    directiva 'RouterOutlet'. El 'Router' se encarga de hacer toda la
+    manipulación del DOM cuando navegamos una u otra sección.
+  -->
+  <router-outlet></router-outlet>
 </div>

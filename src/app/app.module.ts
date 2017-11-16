@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactosService } from './contactos.service';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 
 @NgModule({
   // En el metadato 'declarations' indicamos todos los componentes, directivas y
@@ -15,7 +17,9 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
   declarations: [
     AppComponent,
     ListaContactosComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    NuevoContactoComponent,
+    MisContactosComponent
   ],
   // En el metadato 'imports' indicamos todos aquellos módulos de los cuáles depende
   // nuestra app para funcionar.
