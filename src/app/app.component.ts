@@ -10,7 +10,7 @@ import { Contacto } from './contacto';
 })
 export class AppComponent implements OnInit {
 
-  listaContactos: string[];
+  listaContactos: Contacto[];
 
   // Para hacer una inyección de dependencias (en este caso de un servicio)
   // tenemos que indicar en el constructor de la clase el parámetro
@@ -19,16 +19,16 @@ export class AppComponent implements OnInit {
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit(): void {
-    console.log('Soy AppComponent y acabo de despertarme');
+    console.log('AppComponent || OnInit');
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
   guardarContacto(contacto: Contacto): void {
-    this._contactosService.crearContacto(contacto.nombre);
+    this._contactosService.crearContacto(contacto);
     this.listaContactos = this._contactosService.obtenerContactos();
   }
 
-  borrarContacto(contacto: string): void {
+  borrarContacto(contacto: Contacto): void {
     this._contactosService.eliminarContacto(contacto);
     this.listaContactos = this._contactosService.obtenerContactos();
   }

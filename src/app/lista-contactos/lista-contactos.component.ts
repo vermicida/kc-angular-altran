@@ -5,6 +5,8 @@ import {
   Output,
   EventEmitter } from '@angular/core';
 
+import { Contacto } from '../contacto';
+
 @Component({
   selector: 'app-lista-contactos',
   templateUrl: './lista-contactos.component.html',
@@ -15,14 +17,14 @@ export class ListaContactosComponent {
 
   // Decoramos con '@Input' aquellos atributos en los cuales
   // un componente padre pueda enlazar datos.
-  @Input() contactos: string[];
+  @Input() contactos: Contacto[];
 
   // Decoramos con '@Output' aquellos atributos que vayan a
   // emitir datos a un componente padre. Además, estos atributos
   // deben ser de tipo 'EventEmitter<T>'.
-  @Output() botonEliminarPulsado = new EventEmitter<string>();
+  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
 
-  notificarContactoEliminar(contacto: string): void {
+  notificarContactoEliminar(contacto: Contacto): void {
 
     // Para emitir un datos, usamos la función 'emit()' del 'EventEmitter'.
     this.botonEliminarPulsado.emit(contacto);
