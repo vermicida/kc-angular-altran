@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+
 import { ContactosService } from '../contactos.service';
 import { Contacto } from '../contacto';
 
@@ -11,17 +13,17 @@ import { Contacto } from '../contacto';
 })
 export class MisContactosComponent implements OnInit {
 
-  listaContactos: Contacto[];
+  contactos$: Observable<Contacto[]>;
 
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit() {
-    this.listaContactos = this._contactosService.obtenerContactos();
+    this.contactos$ = this._contactosService.obtenerContactos();
   }
 
   borrarContacto(contacto: Contacto): void {
-    this._contactosService.eliminarContacto(contacto);
-    this.listaContactos = this._contactosService.obtenerContactos();
+    // this._contactosService.eliminarContacto(contacto);
+    // this.listaContactos = this._contactosService.obtenerContactos();
   }
 
 }

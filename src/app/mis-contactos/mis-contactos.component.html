@@ -11,9 +11,13 @@
     indicando entre paréntesis el nombre del mismo, que está decorado
     en el hijo con '@Output'. Para recoger los datos del evento, sean
     del tipo del sean, utilizamos la palabra reservada '$event'.
+
+    Para hacer la suscripción automática a un objeto 'Observable' podemos
+    apoyarnos en el pipe 'AsyncPipe'. De esta forma evitamos hacer la
+    suscripción manual en el componente.
   -->
   <app-lista-contactos
-    [contactos]="listaContactos"
+    [contactos]="contactos$ | async"
     (botonEliminarPulsado)="borrarContacto($event)">
   </app-lista-contactos>
 </div>

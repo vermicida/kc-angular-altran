@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,11 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 
     // Es necesario importar el módulo 'ReactiveFormsModule'
     // para trabajar con formularios reactivos.
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    // Es necesario importar el módulo 'HttpClientModule'
+    // para trabajar cómodamente con peticiones HTTP.
+    HttpClientModule
   ],
   // En el metadato 'providers' añadimos los proveedores de aquellos servicios, clases
   // y valores que quieran inyectarse como dependencias en alguna pieza de nuestra app.

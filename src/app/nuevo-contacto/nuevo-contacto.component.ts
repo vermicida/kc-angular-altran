@@ -21,7 +21,11 @@ export class NuevoContactoComponent {
     private _router: Router) { }
 
   guardarContacto(contacto: Contacto): void {
-    this._contactosService.crearContacto(contacto);
-    this._router.navigateByUrl('/todos');
+    this._contactosService
+        .crearContacto(contacto)
+        .subscribe((contacto: Contacto) => {
+          alert(`El contacto ${contacto.nombre} se ha creado correctamente.`);
+          this._router.navigateByUrl('/todos');
+        });
   }
 }

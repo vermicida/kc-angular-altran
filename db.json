@@ -1,0 +1,47 @@
+{
+  "contactos": [
+    {
+      "id": 1,
+      "nombre": "Bill",
+      "apellidos": "Gates"
+    },
+    {
+      "id": 2,
+      "nombre": "Tim",
+      "apellidos": "Cook"
+    },
+    {
+      "id": 3,
+      "nombre": "Elon",
+      "apellidos": "Musk"
+    },
+    {
+      "id": 4,
+      "nombre": "Steve",
+      "apellidos": "Wozniak"
+    },
+    {
+      "id": 5,
+      "nombre": "Sundar",
+      "apellidos": "Pichai"
+    },
+    {
+      "nombre": "Bob",
+      "apellidos": "Esponja",
+      "telefono": "",
+      "email": "",
+      "facebook": "",
+      "twitter": "",
+      "id": 6
+    },
+    {
+      "nombre": "Calamardo",
+      "apellidos": "Tentáculos",
+      "telefono": "",
+      "email": "",
+      "facebook": "",
+      "twitter": "",
+      "id": 7
+    }
+  ]
+}
