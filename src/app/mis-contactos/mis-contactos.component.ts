@@ -14,6 +14,7 @@ import { Contacto } from '../contacto';
 export class MisContactosComponent implements OnInit {
 
   contactos$: Observable<Contacto[]>;
+  contactoSeleccionado: Contacto;
 
   constructor(private _contactosService: ContactosService) { }
 
@@ -21,9 +22,16 @@ export class MisContactosComponent implements OnInit {
     this.contactos$ = this._contactosService.obtenerContactos();
   }
 
-  borrarContacto(contacto: Contacto): void {
+  verDetallesContacto(contacto: Contacto): void {
+    this.contactoSeleccionado = contacto;
+  }
+
+  // TODO: Este manejador lo debemos mover al componente
+  // de detalles de contacto cuando esté listo.
+
+  // borrarContacto(contacto: Contacto): void {
     // this._contactosService.eliminarContacto(contacto);
     // this.listaContactos = this._contactosService.obtenerContactos();
-  }
+  // }
 
 }

@@ -2,7 +2,7 @@
   <h5>Mis contactos</h5>
   <hr>
 </header>
-<div>
+<div class="row">
   <!--
     Para instanciar un componente usamos su 'selector' como
     etiqueta HTML. Para enlazar datos al componente hijo, usamos
@@ -16,8 +16,16 @@
     apoyarnos en el pipe 'AsyncPipe'. De esta forma evitamos hacer la
     suscripción manual en el componente.
   -->
-  <app-lista-contactos
-    [contactos]="contactos$ | async"
-    (botonEliminarPulsado)="borrarContacto($event)">
-  </app-lista-contactos>
+  <div class="six columns">
+    <app-lista-contactos
+      [contactos]="contactos$ | async"
+      (contactoSeleccionado)="verDetallesContacto($event)">
+    </app-lista-contactos>
+  </div>
+
+  <div class="six columns">
+    <app-detalles-contacto
+      [contacto]="contactoSeleccionado">
+    </app-detalles-contacto>
+  </div>
 </div>

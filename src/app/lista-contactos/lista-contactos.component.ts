@@ -11,7 +11,7 @@ import { Contacto } from '../contacto';
   selector: 'app-lista-contactos',
   templateUrl: './lista-contactos.component.html',
   styleUrls: ['./lista-contactos.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ListaContactosComponent {
 
@@ -19,14 +19,23 @@ export class ListaContactosComponent {
   // un componente padre pueda enlazar datos.
   @Input() contactos: Contacto[];
 
+  @Output() contactoSeleccionado = new EventEmitter<Contacto>();
+
+  notificarContactoSeleccionado(contacto: Contacto): void {
+    this.contactoSeleccionado.emit(contacto);
+  }
+
+  // TODO: Este EventEmitter y manejador los debemos mover
+  // al componente de detalles de contacto cuando esté listo.
+
   // Decoramos con '@Output' aquellos atributos que vayan a
   // emitir datos a un componente padre. Además, estos atributos
   // deben ser de tipo 'EventEmitter<T>'.
-  @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
+  // @Output() botonEliminarPulsado = new EventEmitter<Contacto>();
 
-  notificarContactoEliminar(contacto: Contacto): void {
-
+  // notificarContactoEliminar(contacto: Contacto): void {
     // Para emitir un datos, usamos la función 'emit()' del 'EventEmitter'.
-    this.botonEliminarPulsado.emit(contacto);
-  }
+    // this.botonEliminarPulsado.emit(contacto);
+  // }
+
 }

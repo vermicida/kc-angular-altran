@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 6px 14px;
+  margin: 0;
+}
+
+li:hover {
+  background: #f0f0f0;
+  cursor: pointer;
+}
