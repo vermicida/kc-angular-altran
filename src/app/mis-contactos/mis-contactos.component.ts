@@ -8,8 +8,7 @@ import { Contacto } from '../contacto';
 @Component({
   selector: 'app-mis-contactos',
   templateUrl: './mis-contactos.component.html',
-  styleUrls: ['./mis-contactos.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./mis-contactos.component.css']
 })
 export class MisContactosComponent implements OnInit {
 

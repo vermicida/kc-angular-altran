@@ -6,8 +6,7 @@ import { Contacto } from '../contacto';
 @Component({
   selector: 'app-formulario-contacto',
   templateUrl: './formulario-contacto.component.html',
-  styleUrls: ['./formulario-contacto.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./formulario-contacto.component.css']
 })
 export class FormularioContactoComponent {
 

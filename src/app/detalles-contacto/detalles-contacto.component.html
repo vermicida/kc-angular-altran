@@ -1,10 +1,14 @@
 <div *ngIf="contacto">
   <header>
     <h5>{{ contacto.nombre }} {{ contacto.apellidos }}</h5>
-    <hr>
   </header>
   <div>
-    <span>{{ contacto.telefono }} {{ contacto.email }}</span>
+    <!--
+      Para hacer uso de un Pipe, seguido del dato que va a sufrir
+      la transformación, indicamos el signo pipe ('|') y el nombre
+      del mismo. Es decir, el indicado en el metadato 'name'.
+    -->
+    <span>{{ contacto | DatosContacto }}</span>
     <hr>
   </div>
   <div>

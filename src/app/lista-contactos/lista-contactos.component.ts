@@ -10,8 +10,7 @@ import { Contacto } from '../contacto';
 @Component({
   selector: 'app-lista-contactos',
   templateUrl: './lista-contactos.component.html',
-  styleUrls: ['./lista-contactos.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  styleUrls: ['./lista-contactos.component.css']
 })
 export class ListaContactosComponent {
 
