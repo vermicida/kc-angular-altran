@@ -11,4 +11,13 @@ export class DetallesContactoComponent {
 
   @Input() contacto: Contacto;
 
+  navegarPerfilFacebook(): void {
+    const ruta = `https://www.facebook.com/${this.contacto.facebook}`;
+    window.open(ruta, '_blank');
+  }
+
+  navegarPerfilTwitter(): void {
+    const ruta = `https://twitter.com/${this.contacto.twitter}`;
+    window.open(ruta, '_blank');
+  }
 }

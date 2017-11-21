@@ -12,6 +12,17 @@
     <hr>
   </div>
   <div>
-    <span>{{ contacto.facebook }} {{ contacto.twitter }}</span>
+    <!-- Navegar al perfil de Facebook -->
+    <button
+      *ngIf="contacto.facebook"
+      (click)="navegarPerfilFacebook()">
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </button>
+    <!-- Navegar al perfil de Twitter -->
+    <button
+      *ngIf="contacto.twitter"
+      (click)="navegarPerfilTwitter()">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </button>
   </div>
 </div>
