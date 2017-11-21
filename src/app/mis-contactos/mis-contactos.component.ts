@@ -18,6 +18,10 @@ export class MisContactosComponent implements OnInit {
   constructor(private _contactosService: ContactosService) { }
 
   ngOnInit() {
+    this._recuperarContactosDesdeServidor();
+  }
+
+  private _recuperarContactosDesdeServidor(): void {
     this.contactos$ = this._contactosService.obtenerContactos();
   }
 
@@ -25,12 +29,24 @@ export class MisContactosComponent implements OnInit {
     this.contactoSeleccionado = contacto;
   }
 
-  // TODO: Este manejador lo debemos mover al componente
-  // de detalles de contacto cuando esté listo.
+  preguntarEliminarContacto(contacto: Contacto): void {
 
-  // borrarContacto(contacto: Contacto): void {
-    // this._contactosService.eliminarContacto(contacto);
-    // this.listaContactos = this._contactosService.obtenerContactos();
-  // }
+    // Preguntamos al usuario si realmente quiere eliminar el contacto.
+    if (confirm(`¿Deseas realmente eliminar a ${contacto.nombre} ${contacto.apellidos}?`)) {
+
+      // En tal caso, lo eliminamos.
+      this._contactosService
+          .eliminarContacto(contacto)
+          .subscribe(() => {
+
+            // Una vez la petición HTTP de eliminación ha
+            // terminado, deseleccionamos el contacto eliminado...
+            this.contactoSeleccionado = null;
+
+            // ...y refrescamos la lista principal.
+            this._recuperarContactosDesdeServidor();
+          });
+    }
+  }
 
 }

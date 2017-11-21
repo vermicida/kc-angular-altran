@@ -1,4 +1,5 @@
-button {
+
+button.red-social {
   border: none;
   padding: 0 6px;
 }
@@ -6,4 +7,10 @@ button {
 i {
   font-size: 48px;
   color: #1EAEDB;
+}
+
+button.eliminar {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }

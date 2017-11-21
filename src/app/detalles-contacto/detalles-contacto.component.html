@@ -14,15 +14,26 @@
   <div>
     <!-- Navegar al perfil de Facebook -->
     <button
+      class="red-social"
       *ngIf="contacto.facebook"
       (click)="navegarPerfilFacebook()">
         <i class="fa fa-facebook-square" aria-hidden="true"></i>
     </button>
     <!-- Navegar al perfil de Twitter -->
     <button
+      class="red-social"
       *ngIf="contacto.twitter"
       (click)="navegarPerfilTwitter()">
         <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </button>
+    <hr>
+  </div>
+  <div>
+    <!-- Botón eliminar -->
+    <button
+      class="eliminar"
+      (click)="notificarContactoEliminar()">
+        Eliminar contacto
     </button>
   </div>
 </div>

@@ -25,7 +25,8 @@
 
   <div class="six columns">
     <app-detalles-contacto
-      [contacto]="contactoSeleccionado">
+      [contacto]="contactoSeleccionado"
+      (botonEliminarPulsado)="preguntarEliminarContacto($event)">
     </app-detalles-contacto>
   </div>
 </div>
