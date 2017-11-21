@@ -11,3 +11,13 @@ li:hover {
   background: #f0f0f0;
   cursor: pointer;
 }
+
+button {
+  border: none;
+  padding: 0 10px;
+}
+
+i {
+  font-size: 18px;
+  color: #1EAEDB;
+}

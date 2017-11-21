@@ -12,6 +12,7 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 import { DatosContactoPipe } from './datos-contacto.pipe';
+import { OrdenacionContactosPipe } from './ordenacion-contactos.pipe';
 
 @NgModule({
   // En el metadato 'declarations' indicamos todos los componentes, directivas y
@@ -24,7 +25,8 @@ import { DatosContactoPipe } from './datos-contacto.pipe';
     NuevoContactoComponent,
     MisContactosComponent,
     DetallesContactoComponent,
-    DatosContactoPipe
+    DatosContactoPipe,
+    OrdenacionContactosPipe
   ],
   // En el metadato 'imports' indicamos todos aquellos módulos de los cuáles depende
   // nuestra app para funcionar.

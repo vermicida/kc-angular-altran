@@ -1,3 +1,15 @@
+
+<button (click)="cambiarSentidoOrdenacion()">
+  <i
+    class="fa"
+    aria-hidden="true"
+    [ngClass]="{
+      'fa-sort-alpha-asc': sentidoOrdenacion === 'desc',
+      'fa-sort-alpha-desc': sentidoOrdenacion === 'asc'
+    }">
+  </i>
+</button>
+
 <ul>
   <!--
     La directiva 'NgFor' replica una estructura HTML tantas veces como
@@ -5,7 +17,7 @@
     acceso al elemento que corresponda.
   -->
   <li
-    *ngFor="let contacto of contactos"
+    *ngFor="let contacto of (contactos | OrdenacionContactos:sentidoOrdenacion)"
     (click)="notificarContactoSeleccionado(contacto)">
       {{ contacto.nombre }} {{ contacto.apellidos }}
   </li>

@@ -14,6 +14,8 @@ import { Contacto } from '../contacto';
 })
 export class ListaContactosComponent {
 
+  sentidoOrdenacion = 'asc';
+
   // Decoramos con '@Input' aquellos atributos en los cuales
   // un componente padre pueda enlazar datos.
   @Input() contactos: Contacto[];
@@ -22,6 +24,10 @@ export class ListaContactosComponent {
 
   notificarContactoSeleccionado(contacto: Contacto): void {
     this.contactoSeleccionado.emit(contacto);
+  }
+
+  cambiarSentidoOrdenacion(): void {
+    this.sentidoOrdenacion = this.sentidoOrdenacion === 'asc' ? 'desc' : 'asc';
   }
 
   // TODO: Este EventEmitter y manejador los debemos mover
